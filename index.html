@@ -85,10 +85,10 @@
       </div>
       <div class="form-row vertical">
         <label for="signature">Signature</label>
-        <input id="signature" class="signature" />
+        <input id="signature" class="signature" v-model="fullName" />
       </div>
       <div>
-        <button type="reset" class="reset">Reset</button>
+        <button type="reset" class="reset" v-on:click.prevent="resetFields">Reset</button>
         <button type="submit">Confirm Tickets</button>
       </div>
     </form>
