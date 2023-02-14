@@ -9,7 +9,7 @@ const app = new Vue({
     referrals: [],
     specialRequests: '',
     purchaseAgreementSigned: false,
-    requiredFieldClass: 'required'
+    requiredFieldClass: 'required',
   },
   computed: {
     fullName: {
@@ -32,6 +32,13 @@ const app = new Vue({
           this.firstName = names[0] || '';
           this.lastName = '';
         }
+      }
+    },
+    thatComma: function(){
+      if(fullName) {
+        agreementComma = ','
+      } else {
+        agreementComma = ''
       }
     },
     ticketDescription: function() {
