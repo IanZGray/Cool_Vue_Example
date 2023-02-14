@@ -1,5 +1,24 @@
 /* Site-Wide Styles */
 
+input.required {
+  border-width: 2px;
+}
+ 
+input.touched {
+  border-color: #bdbcbc;
+}
+ 
+input.invalid {
+  background-color: #ffeded;
+  border-color: #da5252;
+}
+
+
+button.active {
+  cursor: pointer;
+  background-color: #4c7ef3;
+}
+
 html {
   font-size: 14px;
   font-family: 'Oxygen', sans-serif;
@@ -135,7 +154,7 @@ button {
   padding: .85rem 2.29rem;
   border-radius: 4px;
   margin-right: 1.36rem;
-  background-color: #4c7ef3;
+  background-color: gray;
   font-size: 1.14rem;
   color: #ffffff;
   transition: .25s;
