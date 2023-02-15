@@ -10,6 +10,7 @@ const app = new Vue({
     specialRequests: '',
     purchaseAgreementSigned: false,
     requiredFieldClass: 'required',
+    popUpDisplay: 'none',
   },
   computed: {
     fullName: {
@@ -103,7 +104,10 @@ const app = new Vue({
       this.purchaseAgreementSigned = false;
     },
     submitFields: function() {
-      alert(`Thank you for your purchase!`)
+      this.popUpDisplay = 'block'
+    },
+    closeDisplay: function() {
+      this.popUpDisplay = 'none'
       this.resetFields()
     }
   }

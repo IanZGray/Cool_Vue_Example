@@ -92,6 +92,13 @@
         <button type="submit" v-bind:disabled="!formIsValid" v-bind:class="{ active: formIsValid }">Confirm Tickets</button>
       </div>
     </form>
+    <div class="popUpClass" v-bind:style="[{display:popUpDisplay}]">
+      <div class="popUpContent"> 
+        <span class="closePopUp" v-on:click="closeDisplay">&times;</span>     
+        <h1>Thank You!</h1>
+        <p style="margin-bottom: 15px">Your purchase of {{ticketDescription}} has been processed. Enjoy the event!</p>
+      </div>
+    </div>
   </div>
 </body>
 </html>
