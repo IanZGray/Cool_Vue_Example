@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Ticketbox</title>
-  
-  
-  <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Petit+Formal+Script" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
-  <script src="./src/app.js" defer></script>
-  <link rel="stylesheet" href="/Cool_Vue_Example/assets/index-6ff9815f.css">
-</head>
-<body>
-  <div id="app">
+<template>
+  <div >
     <header>
       <img class="logo" src="https://content.codecademy.com/courses/vue-instances/ticket_logo.svg" alt="logo">
       <h1>TICKETBOX</h1>
@@ -90,10 +78,10 @@
       </div>
       <div>
         <button type="reset" class="reset">Reset</button>
-        <button type="submit" v-bind:disabled="!formIsValid" v-bind:class="{ active: formIsValid }">Confirm Tickets</button>
+        <button type="submit" v-bind:disabled="!formIsValid" v-bind:class="{ active: formIsValid }" v-on:click="popUpDisplay = true">Confirm Tickets</button>
       </div>
     </form>
-    <div class="popUpClass" v-bind:style="[{display:popUpDisplay}]">
+    <div class="popUpClass" v-show="popUpDisplay">
       <div class="popUpContent"> 
         <span class="closePopUp" v-on:click="closeDisplay">&times;</span>     
         <h1>Thank You!</h1>
@@ -101,5 +89,13 @@
       </div>
     </div>
   </div>
-</body>
-</html>
+</template>
+
+<script>
+export default {
+  name: 'HelloWorld',
+  props: {
+    msg: String
+  }
+}
+</script>
