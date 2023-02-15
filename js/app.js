@@ -33,6 +33,13 @@ const app = new Vue({
           this.lastName = '';
         }
       }
+    },    
+    commaMark: function() {
+      if (this.fullName) {
+        return ','
+      } else {
+        return ''
+      }
     },
     ticketDescription: function() {
       let readableTicketType = 'General Admission';

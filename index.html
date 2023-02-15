@@ -45,7 +45,7 @@
         <div class="form-field">
           <legend>Ticket Type</legend>
           <div>
-            <input type="radio" id="general" value="general" v-model="ticketType">
+            <input type="radio" id="general" value="general" v-model="ticketType" checked="checked">
             <label for="general">General Admission</label>
           </div>
           <div>
@@ -72,13 +72,13 @@
         </fieldset>
       </div>
       <div class="form-row vertical">
-        <label for="requests">Special requests</label>
+        <label for="requests">Special requests  <span class="smallText">(Try 'meet and greet')</span></label>
         <textarea id="requests" v-model.trim="specialRequests"></textarea>
       </div>
       <div class="form-row vertical agreement checkbox">
         <fieldset>
           <legend>Purchase Agreement</legend>
-          <p>I, {{ fullName }}, wish to buy {{ ticketDescription }}. I understand that all ticket sales are final.</p>
+          <p>I, {{ fullName }}{{commaMark}} wish to buy {{ ticketDescription }}. I understand that all ticket sales are final.</p>
           <input type="checkbox" name="agreement" id="agree" v-model="purchaseAgreementSigned" />
           <label v-bind:class="[purchaseAgreementSignedClasses]" for="agree">I Agree *</label>
         </fieldset>
