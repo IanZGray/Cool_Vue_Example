@@ -15,21 +15,21 @@
       <img class="logo" src="https://content.codecademy.com/courses/vue-instances/ticket_logo.svg" alt="logo">
       <h1>TICKETBOX</h1>
     </header>
-    <form v-on:reset="resetFields" v-on:submit.prevent="submitForm">
+    <form v-on:reset="resetFields" v-on:submit.prevent="submitForm" v-on:submit="submitFields">
       <div class="form-row">
         <div class="form-field">
           <label for="first-name">First Name *</label>
-          <input type="text" id="first-name" v-model.trim="firstName" />
+          <input type="text" id="first-name" v-model.trim="firstName" v-bind:class="[requiredFieldClass, firstNameClasses]" />
         </div>
         <div class="form-field">
           <label for="last-name">Last Name *</label>
-          <input type="text" id="last-name" v-model.trim="lastName" />
+          <input type="text" id="last-name" v-model.trim="lastName" v-bind:class="[requiredFieldClass, lastNameClasses]" />
         </div>
       </div>
       <div class="form-row">
         <div class="form-field">
           <label for="email">Email *</label>
-          <input type="text" id="email" v-model.trim="email" v-bind:class="[requiredFieldClass, emailClasses]"/>
+          <input type="text" id="email" v-model.trim="email" v-bind:class="[requiredFieldClass, emailClasses]" />
         </div>
       </div>
       <div class="form-row">
@@ -80,7 +80,7 @@
           <legend>Purchase Agreement</legend>
           <p>I, {{ fullName }}, wish to buy {{ ticketDescription }}. I understand that all ticket sales are final.</p>
           <input type="checkbox" name="agreement" id="agree" v-model="purchaseAgreementSigned" />
-          <label for="agree">I Agree *</label>
+          <label v-bind:class="[purchaseAgreementSignedClasses]" for="agree">I Agree *</label>
         </fieldset>
       </div>
       <div class="form-row vertical">

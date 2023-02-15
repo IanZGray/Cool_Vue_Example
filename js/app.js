@@ -34,13 +34,6 @@ const app = new Vue({
         }
       }
     },
-    thatComma: function(){
-      if(fullName) {
-        agreementComma = ','
-      } else {
-        agreementComma = ''
-      }
-    },
     ticketDescription: function() {
       let readableTicketType = 'General Admission';
       if (this.ticketType === 'vip') {
@@ -66,6 +59,22 @@ const app = new Vue({
       invalid: this.email && !this.emailIsValid
       };
     },
+    firstNameClasses: function(){
+      return {
+        touched: this.firstName.length !== 0,
+      }
+    },
+    lastNameClasses: function(){
+      return {
+        touched: this.lastName.length !== 0,
+      }
+    },
+    purchaseAgreementSignedClasses: function(){
+      return {
+        untouched: this.purchaseAgreementSigned === false,
+        touched: this.purchaseAgreementSigned === true
+      }
+    }
   },
   watch: {
     specialRequests: function(newRequests, oldRequests) {
@@ -85,6 +94,10 @@ const app = new Vue({
       this.referrals = [];
       this.specialRequests = '';
       this.purchaseAgreementSigned = false;
+    },
+    submitFields: function() {
+      alert(`Thank you for your purchase!`)
+      this.resetFields()
     }
   }
 });
